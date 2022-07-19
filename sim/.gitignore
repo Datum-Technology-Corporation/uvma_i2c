@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+=======
+/*.log
+/*.pb
+/xsim.dir/*/*.*
+/xsim.dir/*.*
+/xsim.dir/*
+*.jou
+/*.wdb
+/out/
+results/*/*
+results/*
+/history.yaml
+/results.html
+/results.xml
+>>>>>>> branch 'main' of https://github.com/Datum-Technology-Corporation/uvma_i2c.git
