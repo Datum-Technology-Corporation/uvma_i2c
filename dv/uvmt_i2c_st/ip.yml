@@ -1,0 +1,48 @@
+ip:
+  name: "uvmt_i2c_st"
+  version: "1.0.0"
+  full-name: "I2C Agent Self-Test Bench"
+  type: "DV"
+  sub-type: "UVM Test Bench"
+  sub-sub-type: "Self-Test"
+  description: >
+    TODO Describe I2C Agent Self-Test Bench
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: ""
+  languages: ["sv"]
+  simulators-supported:
+    - { name: "vivado", version: "2022.1" }
+  tags: []
+  copyright-holders: ["Low Power Futures"]
+
+structure:
+   scripts-path : "bin"
+   docs-path    : "docs"
+   examples-path: "examples"
+   src-path     : "src"
+
+dependencies:
+  - { name: "uvm"      , version:  "1.2" }
+  - { name: "uvml"     , version: "~1.0" }
+  - { name: "uvml_logs", version: "~1.0" }
+  - { name: "uvml_sb"  , version: "~1.0" }
+#  - { name: "uvma_i2c"   , version: "^" }
+#  - { name: "uvme_i2c_st", version: "^" }
+
+hdl-src:
+  top-constructs: ["uvmt_i2c_st_tb", "uvml_sim_summary"]
+  directories: [".", "tb", "tests"]
+  top-files: [ "uvmt_i2c_st_pkg.sv" ]
+  test-paths: ["tests"]
+  test-name-template: "uvmt_i2c_st_{{ name }}_test_c"
+  flist:
+    metrics : "uvmt_i2c_st_pkg.flist"
+    riviera : "uvmt_i2c_st_pkg.flist"
+    questa  : "uvmt_i2c_st_pkg.flist"
+    vcs     : "uvmt_i2c_st_pkg.flist"
+    vivado  : "uvmt_i2c_st_pkg.flist.xsim"
+    xcelium : "uvmt_i2c_st_pkg.flist"

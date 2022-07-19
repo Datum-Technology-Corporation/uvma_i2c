@@ -1,0 +1,44 @@
+ip:
+  name: "uvma_i2c"
+  version: "1.0.0"
+  full-name: "I2C UVM Agent"
+  type: "DV"
+  sub-type: "UVM Agent"
+  sub-sub-type: ""
+  description: >
+    
+  home-page: ""
+  repo-uri: ""
+  bugs: ""
+  aliases: []
+  logo: ""
+  block-diagram: "docs/agent_block_diagram.svg"
+  languages: ["sv"]
+  simulators-supported:
+    - { name: "vivado", version: "2022.1" }
+  tags: []
+  copyright-holders: ["Datum Technology Corporation"]
+  licenses: ["SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1"]
+
+structure:
+   scripts-path :  "bin"
+   docs-path    :  "docs"
+   examples-path:  "examples"
+   src-path     :  "src"
+
+dependencies:
+  - { name: "uvm"      , version:  "1.2" }
+  - { name: "uvml"     , version: "~1.0" }
+  - { name: "uvml_logs", version: "~1.0" }
+  - { name: "uvml_ral" , version: "~1.0" }
+
+hdl-src:
+  directories: [".", "comps", "obj", "seq"]
+  top-files: [ "uvma_i2c_pkg.sv" ]
+  flist:
+    metrics : "uvma_i2c_pkg.flist"
+    riviera : "uvma_i2c_pkg.flist"
+    questa  : "uvma_i2c_pkg.flist"
+    vcs     : "uvma_i2c_pkg.flist"
+    vivado  : "uvma_i2c_pkg.flist.xsim"
+    xcelium : "uvma_i2c_pkg.flist"
